@@ -36,6 +36,14 @@ void AStarWingGameMode::Tick(float DeltaTime)
 	if (Boost < 1.0f) {
 		Boost += 0.005f;
 	}
+	if (Time < 0) {
+		//Gameover
+		UGameplayStatics::OpenLevel(GetWorld(), "GameOverTime");
+	}
+	if (Health < 0.0f) {
+		//Gameover
+		UGameplayStatics::OpenLevel(GetWorld(), "GameOverHealth");
+	}
 }
 
 int32 AStarWingGameMode::GetTime() 
