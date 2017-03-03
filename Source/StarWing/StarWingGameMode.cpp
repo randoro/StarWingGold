@@ -38,12 +38,10 @@ void AStarWingGameMode::Tick(float DeltaTime)
 	}
 	if (Time < 0) {
 		//Gameover
-		Reason = "You ran out of time!";
 		UGameplayStatics::OpenLevel(GetWorld(), "GameOverTime");
 	}
 	if (Health < 0.0f) {
 		//Gameover
-		Reason = "You ran out of health!";
 		UGameplayStatics::OpenLevel(GetWorld(), "GameOverHealth");
 	}
 }
@@ -61,11 +59,6 @@ float AStarWingGameMode::GetHealth()
 float AStarWingGameMode::GetBoost()
 {
 	return Boost;
-}
-
-FString AStarWingGameMode::GetReason()
-{
-	return Reason;
 }
 
 void AStarWingGameMode::SetTime(int32 NewTime) 
