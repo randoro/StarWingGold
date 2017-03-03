@@ -23,6 +23,9 @@ class AStarWingGameMode : public AGameMode
 	UPROPERTY(VisibleAnywhere)
 	float Boost = 1.0f;
 
+	UPROPERTY(VisibleAnywhere)
+	FString Reason = "";
+
 public:
 	AStarWingGameMode();
 
@@ -38,6 +41,9 @@ public:
 
 	UFUNCTION(BlueprintPure, Category = "Time")
 	float GetBoost();
+
+	UFUNCTION(BlueprintPure, Category = "Time")
+	FString GetReason();
 
 	UFUNCTION(Category = "Time")
 	void SetTime(int32 NewTime);
